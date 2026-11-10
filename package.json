@@ -17,7 +17,8 @@
     "test": "vitest run --dir tests",
     "test:watch": "vitest",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "index-semantic": "node dist/scripts/index-semantic.js"
+    "index-semantic": "node dist/scripts/index-semantic.js",
+    "sync:private": "tsx scripts/sync-from-private.ts"
   },
   "dependencies": {
     "@hono/node-server": "^2.1.5",

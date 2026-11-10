@@ -2,6 +2,8 @@
 
 [English](README.md) · [Français](README.fr.md)
 
+![Helpdesk tickets connected to an AI assistant through a self-hosted MCP server and human approval](assets/freshdesk-mcp.png)
+
 A self-hosted Model Context Protocol server by **BoucheCousue** for Freshdesk: agent-specific access, ticket context, customer history, controlled ticket actions and optional local semantic search.
 
 Each user connects their own Freshdesk tenant and personal API key through the server's OAuth flow. Freshdesk calls use that agent's native permissions. This is a community project, not an official Freshworks product.
@@ -56,6 +58,7 @@ For a remote client, publish through your own HTTPS reverse proxy or tunnel and 
 | Tools, pagination and controlled writes | [Tools](docs/en/tools.md) | [Outils](docs/fr/tools.md) |
 | Data storage, access and operations | [Security](docs/en/security.md) | [Sécurité](docs/fr/security.md) |
 | Optional semantic search and indexing | [Semantic search](docs/en/semantic-search.md) | [Recherche sémantique](docs/fr/semantic-search.md) |
+| Keeping the public code up to date | [Private-to-public sync](docs/en/public-sync.md) | [Synchronisation privé/public](docs/fr/public-sync.md) |
 
 ## Development
 

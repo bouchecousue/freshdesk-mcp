@@ -2,6 +2,8 @@
 
 [English](README.md) · [Français](README.fr.md)
 
+![Tickets support reliés à un assistant IA par un serveur MCP auto-hébergé avec validation humaine](assets/freshdesk-mcp.png)
+
 Un serveur Model Context Protocol auto-hébergé développé par **BoucheCousue** pour Freshdesk : accès individuel par agent, contexte des tickets, historique client, actions contrôlées et recherche sémantique locale optionnelle.
 
 Chaque utilisateur connecte son tenant Freshdesk et sa clé API personnelle via le parcours OAuth du serveur. Les appels Freshdesk utilisent les droits natifs de cet agent. Ce projet communautaire n'est pas un produit officiel Freshworks.
@@ -56,6 +58,7 @@ Pour un client distant, publier via votre propre reverse proxy ou tunnel HTTPS e
 | Outils, pagination et écritures contrôlées | [Tools](docs/en/tools.md) | [Outils](docs/fr/tools.md) |
 | Stockage, accès et exploitation | [Security](docs/en/security.md) | [Sécurité](docs/fr/security.md) |
 | Recherche sémantique et indexation optionnelles | [Semantic search](docs/en/semantic-search.md) | [Recherche sémantique](docs/fr/semantic-search.md) |
+| Mise à jour du code public | [Private-to-public sync](docs/en/public-sync.md) | [Synchronisation privé/public](docs/fr/public-sync.md) |
 
 ## Développement
 
