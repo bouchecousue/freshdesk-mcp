@@ -1,0 +1,61 @@
+{
+  "name": "@bouchecousue/freshdesk-mcp",
+  "version": "0.3.4",
+  "private": true,
+  "type": "module",
+  "description": "Self-hosted Freshdesk MCP server with per-agent OAuth, controlled writes and optional local semantic search",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "check": "npm run typecheck && npm run test && npm run build",
+    "dev": "tsx watch src/index.ts",
+    "generate-master-key": "tsx scripts/generate-master-key.ts",
+    "usage-report": "node dist/scripts/usage-report.js",
+    "start": "node dist/src/index.js",
+    "test": "vitest run --dir tests",
+    "test:watch": "vitest",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "index-semantic": "node dist/scripts/index-semantic.js"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.1.5",
+    "@modelcontextprotocol/hono": "^2.0.2",
+    "@modelcontextprotocol/server": "2.4.0",
+    "better-sqlite3": "^12.2.0",
+    "hono": "^4.13.13",
+    "html-to-text": "^10.0.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/html-to-text": "^9.0.4",
+    "@types/node": "^24.10.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.12"
+  },
+  "allowScripts": {
+    "better-sqlite3@12.11.1": true,
+    "esbuild@0.28.2": true,
+    "fsevents@2.3.3": true
+  },
+  "license": "MIT",
+  "author": "BoucheCousue",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bouchecousue/freshdesk-mcp.git"
+  },
+  "homepage": "https://github.com/bouchecousue/freshdesk-mcp",
+  "bugs": {
+    "url": "https://github.com/bouchecousue/freshdesk-mcp/issues"
+  },
+  "keywords": [
+    "freshdesk",
+    "mcp",
+    "oauth",
+    "helpdesk",
+    "model-context-protocol"
+  ]
+}
