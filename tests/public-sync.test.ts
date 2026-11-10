@@ -28,6 +28,13 @@ function fixture() {
 }
 
 describe("public export safety boundaries", () => {
+  it("runs the CLI when invoked through a symlink alias", () => {
+    const dir = mkdtempSync(resolve(tmpdir(), "mcp-sync-alias-")); temporary.push(dir);
+    const alias = resolve(dir, "sync-alias.ts");
+    symlinkSync(resolve("scripts/sync-from-private.ts"), alias);
+    const output = execFileSync(process.execPath, [resolve("node_modules/tsx/dist/cli.mjs"), alias, "--help"], { encoding: "utf8" });
+    expect(output).toContain("Default: preview only");
+  });
   it("reads only allowlisted committed blobs and preserves public scripts", () => {
     const f = fixture();
     writeFileSync(resolve(f.source, ".env"), "API_KEY=never-read-this-value\n");
