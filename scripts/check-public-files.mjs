@@ -12,7 +12,11 @@ for (const file of files) {
     errors.push(`Runtime or sensitive artifact must not be tracked: ${file}`);
   }
   const stat = lstatSync(file);
-  if (!stat.isFile() || stat.size > 1024 * 1024) errors.push(`Unexpected file type or size: ${file}`);
+  const illustration = file === "assets/freshdesk-mcp.png";
+  if (!stat.isFile() || stat.size > (illustration ? 4 : 1) * 1024 * 1024) errors.push(`Unexpected file type or size: ${file}`);
+  if (illustration && !readFileSync(file).subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]))) {
+    errors.push(`Invalid illustration format: ${file}`);
+  }
   if (!file.endsWith(".md")) continue;
   const markdown = readFileSync(file, "utf8");
   for (const match of markdown.matchAll(/\[[^\]]*\]\(([^)]+)\)/g)) {
